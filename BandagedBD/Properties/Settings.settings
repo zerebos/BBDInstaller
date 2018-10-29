@@ -1,0 +1,21 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="BandagedBD.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="AgreedToTerms" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
+    <Setting Name="PrimaryBackground" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">28, 28, 28</Value>
+    </Setting>
+    <Setting Name="SecondaryBackground" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">42, 42, 42</Value>
+    </Setting>
+    <Setting Name="Accent" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">62, 130, 229</Value>
+    </Setting>
+    <Setting Name="TextColor" Type="System.Drawing.Color" Scope="Application">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
