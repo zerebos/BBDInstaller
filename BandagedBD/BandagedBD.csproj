@@ -81,9 +81,6 @@
     <Compile Include="Controls\Button.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Button.Designer.cs">
-      <DependentUpon>Button.cs</DependentUpon>
-    </Compile>
     <Compile Include="Controls\FlatCheckBox.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -214,7 +211,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="BBD_small64.ico" />
-    <Content Include="fork.ico" />
     <None Include="Resources\BBDVS.png" />
     <None Include="Resources\delete_small.png" />
     <None Include="Resources\build_small.png" />

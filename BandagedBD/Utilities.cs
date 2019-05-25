@@ -133,6 +133,7 @@ namespace BandagedBD {
 
         public static string GetLatestVersion(string path) {
             if (path == string.Empty) return path;
+            if (!Directory.Exists(path)) return string.Empty;
             var dirs = Directory.GetDirectories(path);
             if (dirs.Length <= 0) return string.Empty;
             var latest = Path.GetFileName(dirs[0]);

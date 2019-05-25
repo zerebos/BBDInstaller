@@ -16,6 +16,7 @@ namespace BandagedBD.Panels {
         public bool shouldRestart => cbShouldRestart.Checked;
         public string[] paths => Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
         public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
+        public string[] roamings => Utilities.GetRoamingPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
 
         public InstallConfigPanel() {
             InitializeComponent();

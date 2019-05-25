@@ -138,6 +138,19 @@ namespace BandagedBD.Panels {
         private int Verify(string installationPath) {
 
             Append("Verifying installation");
+            Append("Checking for old style injection");
+            foreach (var roaming in config.roamings) {
+                var core = $"{roaming}\\modules\\discord_desktop_core\\core";
+                Append($"Checking for old injection {roaming}", true);
+                if (!Directory.Exists(core)) continue;
+                Append($"Deleting old injection {roaming}", true);
+                try {
+                    Directory.Delete(roaming, true);
+                }
+                catch {
+                    Append($"Please delete this folder: {roaming}");
+                }
+            }
 
             var appFolder = $"{installationPath}\\resources\\app";
             if (!Directory.Exists(appFolder)) {
