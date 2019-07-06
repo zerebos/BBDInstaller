@@ -114,7 +114,7 @@ namespace BandagedBD.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 0.3.2.
+        ///   Looks up a localized string similar to 1.0.1.
         /// </summary>
         internal static string Version {
             get {

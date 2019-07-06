@@ -47,8 +47,12 @@ namespace BandagedBD.Panels {
                 Append($"Killing {processNames[i]} Processes");
                 string currentExecutable = Utilities.KillProcess(processNames[i], Append);
 
-
-                if (await DownloadBd(paths[i]) != 1) return 0;
+                if (await DownloadBd(paths[i]) != 1) {
+                    setProgress(0);
+                    Append("Download seems to have failed, will try once more.");
+                    if (await DownloadBd(paths[i]) != 1) return 0;
+                }
+                
                 setProgress(75);
                 if (Verify(paths[i]) != 1) return 0;
                 setProgress(90);
@@ -72,7 +76,7 @@ namespace BandagedBD.Panels {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
 
 
-            using (var wc = new WebClient { Headers = this.Headers }) {
+            using (var wc = new TimedWebClient { Headers = this.Headers }) {
                 wc.DownloadProgressChanged += (sender, args) => {
                     setProgress(args.ProgressPercentage / 2);
                 };
@@ -80,18 +84,22 @@ namespace BandagedBD.Panels {
                 Append($"Using channel: {channel}", true);
                 Append($"Downloading to: {dest}", true);
 
-                await wc.DownloadFileTaskAsync(channel, dest);
+                try {
+                    await wc.DownloadFileTaskAsync(channel, dest);
+                }
+                catch (WebException e) {
+                    Append("Download error: " + e.Message, true);
+                    return 0;
+                }
 
             }
 
             Append("Finished downloading BandagedBD package");
 
-            ExtractBd(dest, $"{installationPath}\\resources");
-
-            return 1;
+            return ExtractBd(dest, $"{installationPath}\\resources");
         }
 
-        private void ExtractBd(string path, string dest) {
+        private int ExtractBd(string path, string dest) {
 
             if (Directory.Exists($"{dest}\\app")) {
                 Append("Deleting old BetterDiscord");
@@ -107,8 +115,7 @@ namespace BandagedBD.Panels {
 
             if (!File.Exists(path)) {
                 Append($"BandagedBD package does not exist in: {path}. Cannot continue.");
-                Window.Fail();
-                return;
+                return 0;
             }
 
             var zar = ZipFile.OpenRead(path);
@@ -121,8 +128,7 @@ namespace BandagedBD.Panels {
             zar.Dispose();
             if (!Directory.Exists($"{dest}\\BetterDiscordApp-{branch}")) {
                 Append($"BandagedBD package does not exist in: {dest}\\BetterDiscordApp-{branch}. Cannot continue.");
-                Window.Fail();
-                return;
+                return 0;
             }
 
             Append("Renaming package dir");
@@ -133,6 +139,8 @@ namespace BandagedBD.Panels {
                 Append($"Deleting temp file {path}");
                 File.Delete(path);
             }
+
+            return 1;
         }
 
         private int Verify(string installationPath) {

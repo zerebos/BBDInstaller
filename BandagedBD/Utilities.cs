@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Net;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
@@ -153,6 +154,14 @@ namespace BandagedBD {
 
         public static string GetRoaming(string version) {
             return GetLatestVersion($"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\{version}");
+        }
+    }
+
+    public class TimedWebClient : WebClient {
+        protected override WebRequest GetWebRequest(Uri uri) {
+            WebRequest w = base.GetWebRequest(uri);
+            w.Timeout = 5 * 60 * 1000;
+            return w;
         }
     }
 }

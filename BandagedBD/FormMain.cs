@@ -18,6 +18,7 @@ namespace BandagedBD {
 
         public FormMain() {
             InitializeComponent();
+            this.Text = "BandagedBD Installer v" + Properties.Resources.Version;
             logo.Click += Logo_Click;
 
             panelMap[PanelTypes.License] = new LicensePanel();
@@ -94,7 +95,7 @@ namespace BandagedBD {
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
-            Utilities.OpenProcess("https://www.paypal.me/ZackRauen");
+            Utilities.OpenProcess("https://paypal.me/ZackRauen");
         }
     }
 }
