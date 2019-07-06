@@ -37,6 +37,8 @@
             // 
             this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cbShouldRestart.AutoSize = true;
+            this.cbShouldRestart.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbShouldRestart.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbShouldRestart.Checked = true;
             this.cbShouldRestart.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbShouldRestart.Cursor = System.Windows.Forms.Cursors.Hand;

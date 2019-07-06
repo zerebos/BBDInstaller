@@ -12,16 +12,21 @@ namespace BandagedBD {
 
     public class Utilities {
         public static readonly Regex _matcher = new Regex(@"[0-9]+\.[0-9]+\.[0-9]+");
-        public static string StablePath => $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\Discord";
-        public static bool StableExists() => Directory.Exists(StablePath);
-        public static string CanaryPath => $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\DiscordCanary";
-        public static bool CanaryExists() => Directory.Exists(CanaryPath);
-        public static string PtbPath => $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\DiscordPTB";
-        public static bool PtbExists() => Directory.Exists(PtbPath);
+        public static string LADPath(string append) => $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\{append}";
+        public static string PDPath(string append) => $"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\\{Environment.UserName}\\{append}";
 
-        public static string CurrentStablePath = StableExists() ? StablePath : null;
-        public static string CurrentCanaryPath = CanaryExists() ? CanaryPath : null;
-        public static string CurrentPtbPath = PtbExists() ? PtbPath : null;
+        public static string StablePath => LADPath("Discord");
+        public static string StablePathPD => PDPath("Discord");
+
+        public static string CanaryPath => LADPath("DiscordCanary");
+        public static string CanaryPathPD => PDPath("DiscordCanary");
+
+        public static string PtbPath => LADPath("DiscordPTB");
+        public static string PtbPathPD => PDPath("DiscordPTB");
+
+        public static string CurrentStablePath = Directory.Exists(StablePathPD) ? StablePathPD : Directory.Exists(StablePath) ? StablePath : null;
+        public static string CurrentCanaryPath = Directory.Exists(CanaryPathPD) ? CanaryPathPD : Directory.Exists(CanaryPath) ? CanaryPath : null;
+        public static string CurrentPtbPath = Directory.Exists(PtbPathPD) ? PtbPathPD : Directory.Exists(PtbPath) ? PtbPath : null;
 
         public static void OpenProcess(string url) {
             Process.Start(url);

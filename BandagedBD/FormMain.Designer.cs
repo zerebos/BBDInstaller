@@ -43,7 +43,8 @@ namespace BandagedBD {
             // 
             // panelDock
             // 
-            this.panelDock.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panelDock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelDock.BackColor = System.Drawing.Color.Transparent;
             this.panelDock.Location = new System.Drawing.Point(12, 96);
@@ -152,8 +153,7 @@ namespace BandagedBD {
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = global::BandagedBD.Properties.Settings.Default.PrimaryBackground;
             this.ClientSize = new System.Drawing.Size(776, 501);
             this.Controls.Add(this.linkLabel1);
