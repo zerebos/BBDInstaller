@@ -27,9 +27,12 @@ namespace BandagedBD.Panels {
             string[] paths = Config.pathsToDelete;
             int chunk = 80 / paths.Length;
             int i = 0;
+            int newValue = 20;
             Utilities.DeleteFolders(paths, (message) => {
                 Append(message);
-                pbStatus.Value = (chunk * i + chunk) + 20;
+                newValue = (chunk * i + chunk) + 20;
+                if (newValue <= 100) pbStatus.Value = newValue;
+                else pbStatus.Value = 100;
                 i++;
             });
             foreach (var exe in exes) {

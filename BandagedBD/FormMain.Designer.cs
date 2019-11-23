@@ -46,6 +46,8 @@ namespace BandagedBD {
             this.panelDock.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelDock.AutoScroll = true;
+            this.panelDock.AutoScrollMinSize = new System.Drawing.Size(700, 300);
             this.panelDock.BackColor = System.Drawing.Color.Transparent;
             this.panelDock.Location = new System.Drawing.Point(12, 96);
             this.panelDock.Name = "panelDock";
@@ -164,7 +166,6 @@ namespace BandagedBD {
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.logo);
             this.Controls.Add(this.panelDock);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "FormMain";

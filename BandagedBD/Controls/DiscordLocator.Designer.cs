@@ -169,6 +169,8 @@
             // 
             this.discordPTB.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.discordPTB.AutoSize = true;
+            this.discordPTB.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.discordPTB.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.discordPTB.Cursor = System.Windows.Forms.Cursors.Hand;
             this.discordPTB.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
             this.discordPTB.Location = new System.Drawing.Point(9, 124);
@@ -183,6 +185,8 @@
             // 
             this.discordCanary.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.discordCanary.AutoSize = true;
+            this.discordCanary.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.discordCanary.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.discordCanary.Cursor = System.Windows.Forms.Cursors.Hand;
             this.discordCanary.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
             this.discordCanary.Location = new System.Drawing.Point(9, 82);
@@ -197,6 +201,8 @@
             // 
             this.discordStable.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.discordStable.AutoSize = true;
+            this.discordStable.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.discordStable.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.discordStable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.discordStable.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
             this.discordStable.Location = new System.Drawing.Point(9, 41);
@@ -209,8 +215,8 @@
             // 
             // DiscordLocator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.browsePTB);

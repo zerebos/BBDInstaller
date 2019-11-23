@@ -18,16 +18,19 @@ namespace BandagedBD {
 
         public static string StablePath => LADPath("Discord");
         public static string StablePathPD => PDPath("Discord");
+        public static string StablePathEXE => GetProcess("Discord");
 
         public static string CanaryPath => LADPath("DiscordCanary");
         public static string CanaryPathPD => PDPath("DiscordCanary");
+        public static string CanaryPathEXE => GetProcess("DiscordCanary");
 
         public static string PtbPath => LADPath("DiscordPTB");
         public static string PtbPathPD => PDPath("DiscordPTB");
+        public static string PtbPathEXE => GetProcess("DiscordPTB");
 
-        public static string CurrentStablePath = Directory.Exists(StablePathPD) ? StablePathPD : Directory.Exists(StablePath) ? StablePath : null;
-        public static string CurrentCanaryPath = Directory.Exists(CanaryPathPD) ? CanaryPathPD : Directory.Exists(CanaryPath) ? CanaryPath : null;
-        public static string CurrentPtbPath = Directory.Exists(PtbPathPD) ? PtbPathPD : Directory.Exists(PtbPath) ? PtbPath : null;
+        public static string CurrentStablePath = Directory.Exists(StablePathEXE) ? StablePathEXE : Directory.Exists(StablePathPD) ? StablePathPD : Directory.Exists(StablePath) ? StablePath : null;
+        public static string CurrentCanaryPath = Directory.Exists(CanaryPathEXE) ? CanaryPathEXE : Directory.Exists(CanaryPathPD) ? CanaryPathPD : Directory.Exists(CanaryPath) ? CanaryPath : null;
+        public static string CurrentPtbPath = Directory.Exists(PtbPathEXE) ? PtbPathEXE : Directory.Exists(PtbPathPD) ? PtbPathPD : Directory.Exists(PtbPath) ? PtbPath : null;
 
         public static void OpenProcess(string url) {
             Process.Start(url);
@@ -59,6 +62,18 @@ namespace BandagedBD {
                     onMessage?.Invoke($"Could not delete {paths[i]} please delete manually.");
                 }
             }
+        }
+
+        public static string GetProcess(string processName) {
+            var currentExecutable = string.Empty;
+            try {
+                foreach (var process in Process.GetProcessesByName(processName)) {
+                    currentExecutable = process.MainModule.FileName;
+                    break;
+                }
+            }
+            catch { }
+            return currentExecutable;
         }
 
         public static string KillProcess(string processName, Action<string> onMessage = null) {
