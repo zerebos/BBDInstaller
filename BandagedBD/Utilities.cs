@@ -15,18 +15,19 @@ namespace BandagedBD {
         public static readonly Regex _matcher = new Regex(@"[0-9]+\.[0-9]+\.[0-9]+");
         public static string LADPath(string append) => $"{Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)}\\{append}";
         public static string PDPath(string append) => $"{Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData)}\\{Environment.UserName}\\{append}";
+        public static string EXEPath(string exe) => exe == string.Empty ? exe : Path.GetFullPath(Path.Combine(exe, "..\\.."));
 
         public static string StablePath => LADPath("Discord");
         public static string StablePathPD => PDPath("Discord");
-        public static string StablePathEXE => GetProcess("Discord");
+        public static string StablePathEXE => EXEPath(GetProcess("Discord"));
 
         public static string CanaryPath => LADPath("DiscordCanary");
         public static string CanaryPathPD => PDPath("DiscordCanary");
-        public static string CanaryPathEXE => GetProcess("DiscordCanary");
+        public static string CanaryPathEXE => EXEPath(GetProcess("DiscordCanary"));
 
         public static string PtbPath => LADPath("DiscordPTB");
         public static string PtbPathPD => PDPath("DiscordPTB");
-        public static string PtbPathEXE => GetProcess("DiscordPTB");
+        public static string PtbPathEXE => EXEPath(GetProcess("DiscordPTB"));
 
         public static string CurrentStablePath = Directory.Exists(StablePathEXE) ? StablePathEXE : Directory.Exists(StablePathPD) ? StablePathPD : Directory.Exists(StablePath) ? StablePath : null;
         public static string CurrentCanaryPath = Directory.Exists(CanaryPathEXE) ? CanaryPathEXE : Directory.Exists(CanaryPathPD) ? CanaryPathPD : Directory.Exists(CanaryPath) ? CanaryPath : null;
