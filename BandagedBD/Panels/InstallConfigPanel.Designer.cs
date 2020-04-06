@@ -35,7 +35,7 @@
             // 
             // cbShouldRestart
             // 
-            this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbShouldRestart.AutoSize = true;
             this.cbShouldRestart.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
             this.cbShouldRestart.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
@@ -44,7 +44,7 @@
             this.cbShouldRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShouldRestart.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.cbShouldRestart.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbShouldRestart.Location = new System.Drawing.Point(9, 196);
+            this.cbShouldRestart.Location = new System.Drawing.Point(9, 212);
             this.cbShouldRestart.Name = "cbShouldRestart";
             this.cbShouldRestart.Size = new System.Drawing.Size(162, 17);
             this.cbShouldRestart.TabIndex = 5;
@@ -53,19 +53,19 @@
             // 
             // discordLocator
             // 
-            this.discordLocator.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.discordLocator.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.discordLocator.BackColor = System.Drawing.Color.Transparent;
             this.discordLocator.Location = new System.Drawing.Point(0, 3);
             this.discordLocator.Name = "discordLocator";
-            this.discordLocator.Size = new System.Drawing.Size(662, 161);
+            this.discordLocator.Size = new System.Drawing.Size(662, 176);
             this.discordLocator.TabIndex = 6;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label1.Location = new System.Drawing.Point(6, 170);
+            this.label1.Location = new System.Drawing.Point(6, 186);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 8;
@@ -81,6 +81,7 @@
             this.Controls.Add(this.discordLocator);
             this.Name = "InstallConfigPanel";
             this.Size = new System.Drawing.Size(662, 284);
+            this.Load += new System.EventHandler(this.InstallConfigPanel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

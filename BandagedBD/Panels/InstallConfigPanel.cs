@@ -37,5 +37,9 @@ namespace BandagedBD.Panels {
             if (discordLocator.stable || discordLocator.canary || discordLocator.ptb) Window.btnNext.ShowEnable("Install");
             else Window.btnNext.ShowDisable("Install");
         }
+
+        private void InstallConfigPanel_Load(object sender, EventArgs e) {
+
+        }
     }
 }
