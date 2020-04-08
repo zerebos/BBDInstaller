@@ -52,5 +52,6 @@ namespace BandagedBD.Panels {
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             Utilities.OpenProcess("https://0x71.cc/bd/troubleshoot/");
         }
+
     }
 }

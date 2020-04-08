@@ -36,12 +36,14 @@
             // 
             // userData
             // 
-            this.userData.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.userData.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.userData.AutoSize = true;
+            this.userData.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.userData.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.userData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userData.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.userData.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.userData.Location = new System.Drawing.Point(9, 196);
+            this.userData.Location = new System.Drawing.Point(9, 209);
             this.userData.Name = "userData";
             this.userData.Size = new System.Drawing.Size(170, 17);
             this.userData.TabIndex = 5;
@@ -50,10 +52,10 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label1.Location = new System.Drawing.Point(6, 170);
+            this.label1.Location = new System.Drawing.Point(6, 183);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 7;
@@ -61,14 +63,16 @@
             // 
             // cbShouldRestart
             // 
-            this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbShouldRestart.AutoSize = true;
+            this.cbShouldRestart.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbShouldRestart.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbShouldRestart.Checked = true;
             this.cbShouldRestart.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbShouldRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShouldRestart.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.cbShouldRestart.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbShouldRestart.Location = new System.Drawing.Point(9, 219);
+            this.cbShouldRestart.Location = new System.Drawing.Point(9, 232);
             this.cbShouldRestart.Name = "cbShouldRestart";
             this.cbShouldRestart.Size = new System.Drawing.Size(162, 17);
             this.cbShouldRestart.TabIndex = 34;
@@ -77,11 +81,11 @@
             // 
             // discordLocator
             // 
-            this.discordLocator.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.discordLocator.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.discordLocator.BackColor = System.Drawing.Color.Transparent;
             this.discordLocator.Location = new System.Drawing.Point(0, 3);
             this.discordLocator.Name = "discordLocator";
-            this.discordLocator.Size = new System.Drawing.Size(662, 161);
+            this.discordLocator.Size = new System.Drawing.Size(662, 177);
             this.discordLocator.TabIndex = 6;
             // 
             // UninstallConfigPanel

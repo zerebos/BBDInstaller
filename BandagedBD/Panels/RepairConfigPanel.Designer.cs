@@ -46,7 +46,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label2.Location = new System.Drawing.Point(6, 197);
+            this.label2.Location = new System.Drawing.Point(6, 212);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(292, 13);
             this.label2.TabIndex = 25;
@@ -56,9 +56,11 @@
             // 
             this.cbBootLoop.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbBootLoop.AutoSize = true;
+            this.cbBootLoop.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbBootLoop.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbBootLoop.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbBootLoop.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbBootLoop.Location = new System.Drawing.Point(120, 223);
+            this.cbBootLoop.Location = new System.Drawing.Point(120, 238);
             this.cbBootLoop.Name = "cbBootLoop";
             this.cbBootLoop.Size = new System.Drawing.Size(121, 17);
             this.cbBootLoop.TabIndex = 26;
@@ -69,9 +71,11 @@
             // 
             this.cbInfinite.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbInfinite.AutoSize = true;
+            this.cbInfinite.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbInfinite.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbInfinite.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbInfinite.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbInfinite.Location = new System.Drawing.Point(120, 257);
+            this.cbInfinite.Location = new System.Drawing.Point(120, 272);
             this.cbInfinite.Name = "cbInfinite";
             this.cbInfinite.Size = new System.Drawing.Size(167, 17);
             this.cbInfinite.TabIndex = 27;
@@ -82,9 +86,11 @@
             // 
             this.cbError.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbError.AutoSize = true;
+            this.cbError.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbError.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbError.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbError.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbError.Location = new System.Drawing.Point(358, 257);
+            this.cbError.Location = new System.Drawing.Point(358, 272);
             this.cbError.Name = "cbError";
             this.cbError.Size = new System.Drawing.Size(176, 17);
             this.cbError.TabIndex = 28;
@@ -95,9 +101,11 @@
             // 
             this.cbUninjected.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbUninjected.AutoSize = true;
+            this.cbUninjected.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbUninjected.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbUninjected.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbUninjected.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbUninjected.Location = new System.Drawing.Point(358, 223);
+            this.cbUninjected.Location = new System.Drawing.Point(358, 238);
             this.cbUninjected.Name = "cbUninjected";
             this.cbUninjected.Size = new System.Drawing.Size(218, 17);
             this.cbUninjected.TabIndex = 29;
@@ -110,7 +118,7 @@
             this.discordLocator.BackColor = System.Drawing.Color.Transparent;
             this.discordLocator.Location = new System.Drawing.Point(0, 2);
             this.discordLocator.Name = "discordLocator";
-            this.discordLocator.Size = new System.Drawing.Size(662, 161);
+            this.discordLocator.Size = new System.Drawing.Size(662, 175);
             this.discordLocator.TabIndex = 30;
             // 
             // label1
@@ -119,9 +127,9 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label1.Location = new System.Drawing.Point(179, 308);
+            this.label1.Location = new System.Drawing.Point(141, 307);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 13);
+            this.label1.Size = new System.Drawing.Size(181, 16);
             this.label1.TabIndex = 31;
             this.label1.Text = "Can\'t find your problem here?";
             // 
@@ -134,9 +142,9 @@
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = global::BandagedBD.Properties.Settings.Default.Accent;
-            this.linkLabel1.Location = new System.Drawing.Point(322, 308);
+            this.linkLabel1.Location = new System.Drawing.Point(328, 307);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(114, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(143, 16);
             this.linkLabel1.TabIndex = 32;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Try this troubleshooter.";
@@ -145,10 +153,10 @@
             // 
             // label3
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
             this.label3.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label3.Location = new System.Drawing.Point(6, 169);
+            this.label3.Location = new System.Drawing.Point(6, 184);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(95, 13);
             this.label3.TabIndex = 34;
@@ -156,14 +164,16 @@
             // 
             // cbShouldRestart
             // 
-            this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.cbShouldRestart.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbShouldRestart.AutoSize = true;
+            this.cbShouldRestart.BoxBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+            this.cbShouldRestart.BoxForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(130)))), ((int)(((byte)(229)))));
             this.cbShouldRestart.Checked = true;
             this.cbShouldRestart.CheckState = System.Windows.Forms.CheckState.Checked;
             this.cbShouldRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShouldRestart.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.cbShouldRestart.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbShouldRestart.Location = new System.Drawing.Point(120, 168);
+            this.cbShouldRestart.Location = new System.Drawing.Point(120, 183);
             this.cbShouldRestart.Name = "cbShouldRestart";
             this.cbShouldRestart.Size = new System.Drawing.Size(162, 17);
             this.cbShouldRestart.TabIndex = 33;

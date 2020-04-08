@@ -43,5 +43,6 @@ namespace BandagedBD.Panels {
             if (discordLocator.stable || discordLocator.canary || discordLocator.ptb) Window.btnNext.ShowEnable("Uninstall");
             else Window.btnNext.ShowDisable("Uninstall");
         }
+
     }
 }
