@@ -114,7 +114,9 @@
             // 
             // discordLocator
             // 
-            this.discordLocator.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.discordLocator.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.discordLocator.BackColor = System.Drawing.Color.Transparent;
             this.discordLocator.Location = new System.Drawing.Point(0, 2);
             this.discordLocator.Name = "discordLocator";
@@ -129,7 +131,7 @@
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
             this.label1.Location = new System.Drawing.Point(141, 307);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 16);
+            this.label1.Size = new System.Drawing.Size(144, 13);
             this.label1.TabIndex = 31;
             this.label1.Text = "Can\'t find your problem here?";
             // 
@@ -144,7 +146,7 @@
             this.linkLabel1.LinkColor = global::BandagedBD.Properties.Settings.Default.Accent;
             this.linkLabel1.Location = new System.Drawing.Point(328, 307);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(143, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(114, 13);
             this.linkLabel1.TabIndex = 32;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Try this troubleshooter.";

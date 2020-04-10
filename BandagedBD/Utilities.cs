@@ -174,6 +174,10 @@ namespace BandagedBD {
     }
 
     public class TimedWebClient : WebClient {
+        public WebHeaderCollection DefaultHeaders = new WebHeaderCollection { ["User-Agent"] = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11" };
+        public TimedWebClient() {
+            Headers = DefaultHeaders;
+        }
         protected override WebRequest GetWebRequest(Uri uri) {
             WebRequest w = base.GetWebRequest(uri);
             w.Timeout = 5 * 60 * 1000;

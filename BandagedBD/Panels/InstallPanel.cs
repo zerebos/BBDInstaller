@@ -19,7 +19,6 @@ namespace BandagedBD.Panels {
 
         private InstallConfigPanel config => (InstallConfigPanel) Window.GetPanel(PanelTypes.InstallConfig);
 
-        private WebHeaderCollection Headers = new WebHeaderCollection { ["User-Agent"] = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11" };
         private readonly SynchronizationContext _synchronizationContext;
         private int progressChunk => 100 / config.paths.Length;
         private int iteration = 0;
@@ -76,7 +75,7 @@ namespace BandagedBD.Panels {
             ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
 
 
-            using (var wc = new TimedWebClient { Headers = this.Headers }) {
+            using (var wc = new TimedWebClient()) {
                 wc.DownloadProgressChanged += (sender, args) => {
                     setProgress(args.ProgressPercentage / 2);
                 };

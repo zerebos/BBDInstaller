@@ -62,7 +62,7 @@ namespace BandagedBD {
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(82, 37);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(153, 18);
+            this.lblTitle.Size = new System.Drawing.Size(145, 16);
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "BandagedBD Setup";
             // 
@@ -88,7 +88,7 @@ namespace BandagedBD {
             this.linkLabel1.LinkColor = global::BandagedBD.Properties.Settings.Default.Accent;
             this.linkLabel1.Location = new System.Drawing.Point(172, 471);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(120, 16);
+            this.linkLabel1.Size = new System.Drawing.Size(95, 13);
             this.linkLabel1.TabIndex = 34;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Consider donating.";
@@ -103,7 +103,7 @@ namespace BandagedBD {
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
             this.label1.Location = new System.Drawing.Point(13, 471);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 16);
+            this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 33;
             this.label1.Text = "Enjoying BandagedBD?";
             // 
@@ -175,6 +175,7 @@ namespace BandagedBD {
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "BandagedBD Installer v0.3.2";
+            this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

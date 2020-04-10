@@ -1,8 +1,9 @@
 ﻿using BandagedBD.Panels;
 using System;
+using System.Net;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
+using System.Threading.Tasks;
 
 namespace BandagedBD {
 
@@ -12,6 +13,9 @@ namespace BandagedBD {
 
         private PanelTypes CurrentPanel = PanelTypes.NONE;
         public PanelTypes Action = PanelTypes.NONE;
+
+        private string currentTag = "v" + Properties.Resources.Version;
+        private string remoteTag = "v";
 
         private Dictionary<PanelTypes, IPanel> panelMap = new Dictionary<PanelTypes, IPanel>();
 
@@ -37,6 +41,10 @@ namespace BandagedBD {
 
             if (!Properties.Settings.Default.AgreedToTerms) SwitchPanel(PanelTypes.License);
             else SwitchPanel(PanelTypes.Action);
+
+            Task.Run(checkForUpdate).ContinueWith(result => {
+                if (result.Result) showUpdateNotice();
+            });
         }
 
         public void SetTitle(string title) => lblTitle.Text = title;
@@ -96,6 +104,53 @@ namespace BandagedBD {
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             Utilities.OpenProcess("https://paypal.me/ZackRauen");
+        }
+
+        private async Task<bool> checkForUpdate()
+        {
+            string endpoint = "https://api.github.com/repos/rauenzi/BBDInstaller/releases/latest";
+
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+
+            string tagNameKey = "\"tag_name\":";
+            using (var wc = new TimedWebClient())
+            {
+
+                try
+                {
+                    wc.Headers.Set("User-Agent", "BBDInstaller");
+                    string json = wc.DownloadString(endpoint);
+                    int tagNameIndex = json.IndexOf(tagNameKey);
+                    int versionStart = tagNameIndex + tagNameKey.Length + 1;
+                    int versionEnd = json.IndexOf("\"", versionStart);
+                    remoteTag = json.Substring(versionStart, versionEnd - versionStart);
+                    return string.CompareOrdinal(remoteTag, currentTag) > 0;
+                }
+                catch
+                {
+                    return false;
+                }
+
+            }
+        }
+
+        private void showUpdateNotice()
+        {
+            DialogResult confirmResult = MessageBox.Show($"There is a newer version of the installer available ({remoteTag}). Would you like to download it now?", "Update Available!", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                Utilities.OpenProcess($"https://github.com/rauenzi/BBDInstaller/releases/download/{remoteTag}/BandagedBD.exe");
+                Application.Exit();
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
