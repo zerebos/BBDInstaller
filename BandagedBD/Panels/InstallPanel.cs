@@ -166,7 +166,7 @@ namespace BandagedBD.Panels {
                 return 0;
             }
 
-            var injectorFiles = new[] { "index.js", "config.json", "package.json", "betterdiscord\\index.js", "betterdiscord\\config.json", "betterdiscord\\utils.js" };
+            var injectorFiles = new[] { "index.js", "package.json", "betterdiscord\\index.js", "betterdiscord\\preload.js", "betterdiscord\\config.json", "betterdiscord\\logger.js" };
 
             foreach (var bdFile in injectorFiles) {
                 if (File.Exists($"{appFolder}\\{bdFile}")) {
