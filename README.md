@@ -59,3 +59,21 @@ The native checkbox leaves a lot to be desired in terms of extensibility and cus
 ### FlatProgressBar
 
 Similar to the checkbox the native progressbar has little to no customization options. This paints a flat checkbox using the an offscreen image as adapted from this [StackOverflow answer](https://stackoverflow.com/a/7490884).
+
+### Silent Setup
+
+-install -i   Install BBD  
+-uninstall -u   Uninstall BBD  
+   Optional switches for uninstall  
+      -deleteuserdata   deletes all user settings of betterdiscord  
+      -repair -r   Repair BBD  
+   Optional switches for repair, for the following issues  
+      -repairupdateloop   Discord update loop  
+      -repairnotlaunching   BandagedBD not launching with Discord  
+      -repairloadingindefinitely   BandagedBD loading indefinitely  
+      -repairjavascripterror   Fatal JavaScript error on launch  
+  
+all require using one or more of the following  
+   -stable [path], -canary [path], -ptb [path]  
+  
+-norestart   By default discord will be restarted, this disables restarting of processes  
