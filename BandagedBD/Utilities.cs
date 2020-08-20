@@ -10,6 +10,7 @@ using System.Windows.Forms;
 namespace BandagedBD {
 
     public enum Discord { Stable, Canary, PTB };
+    public enum LaunchMode { GUI, Install, Repair, Uninstall, None };
 
     public class Utilities {
         public static readonly Regex _matcher = new Regex(@"[0-9]+\.[0-9]+\.[0-9]+");
