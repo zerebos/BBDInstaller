@@ -13,9 +13,9 @@ namespace BandagedBD.Panels {
         public string Title => "Repair Setup";
         public UserControl Control => this;
 
-        public string[] localPaths => Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, "resources\\app");
-        public string[] roamingPaths => Utilities.GetRoamingPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
-        public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
+        public string[] localPaths => Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development, "resources\\app");
+        public string[] roamingPaths => Utilities.GetRoamingPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development);
+        public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development);
 
         public bool shouldDeleteRoaming => cbError.Checked || cbBootLoop.Checked;
         public bool shouldDeleteLocal => cbBootLoop.Checked;
@@ -29,6 +29,7 @@ namespace BandagedBD.Panels {
             discordLocator.setCheckboxLabel(Discord.Stable, "Repair On Stable");
             discordLocator.setCheckboxLabel(Discord.Canary, "Repair On Canary");
             discordLocator.setCheckboxLabel(Discord.PTB, "Repair On PTB");
+            discordLocator.setCheckboxLabel(Discord.Development, "Repair On Development");
             discordLocator.OnCheckedChange += OnCheckedChange;
             cbError.CheckedChanged += OnCheckedChange;
             cbBootLoop.CheckedChanged += OnCheckedChange;
@@ -43,7 +44,7 @@ namespace BandagedBD.Panels {
         }
 
         private void OnCheckedChange(object sender, EventArgs e) {
-            bool location = discordLocator.stable || discordLocator.canary || discordLocator.ptb;
+            bool location = discordLocator.stable || discordLocator.canary || discordLocator.ptb || discordLocator.development;
             bool problem = cbError.Checked || cbBootLoop.Checked || cbUninjected.Checked || cbInfinite.Checked;
             if (location && problem) Window.btnNext.ShowEnable("Repair");
             else Window.btnNext.ShowDisable("Repair");
@@ -53,5 +54,9 @@ namespace BandagedBD.Panels {
             Utilities.OpenProcess("https://0x71.cc/bd/troubleshoot/");
         }
 
+        private void discordLocator_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

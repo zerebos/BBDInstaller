@@ -14,9 +14,9 @@ namespace BandagedBD.Panels {
         public PanelTypes NextPanel => PanelTypes.Install;
 
         public bool shouldRestart => cbShouldRestart.Checked;
-        public string[] paths => Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
-        public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
-        public string[] roamings => Utilities.GetRoamingPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
+        public string[] paths => Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development);
+        public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development);
+        public string[] roamings => Utilities.GetRoamingPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development);
 
         public InstallConfigPanel() {
             InitializeComponent();
@@ -24,6 +24,7 @@ namespace BandagedBD.Panels {
             discordLocator.setCheckboxLabel(Discord.Stable, "Install To Stable");
             discordLocator.setCheckboxLabel(Discord.Canary, "Install To Canary");
             discordLocator.setCheckboxLabel(Discord.PTB, "Install To PTB");
+            discordLocator.setCheckboxLabel(Discord.Development, "Install to Development");
             discordLocator.OnCheckedChange += OnCheckedChange;
         }
 
@@ -34,11 +35,16 @@ namespace BandagedBD.Panels {
         }
 
         private void OnCheckedChange(object sender, EventArgs e) {
-            if (discordLocator.stable || discordLocator.canary || discordLocator.ptb) Window.btnNext.ShowEnable("Install");
+            if (discordLocator.stable || discordLocator.canary || discordLocator.ptb || discordLocator.development) Window.btnNext.ShowEnable("Install");
             else Window.btnNext.ShowDisable("Install");
         }
 
         private void InstallConfigPanel_Load(object sender, EventArgs e) {
+
+        }
+
+        private void discordLocator_Load(object sender, EventArgs e)
+        {
 
         }
     }

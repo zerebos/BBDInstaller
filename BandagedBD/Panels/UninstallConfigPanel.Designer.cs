@@ -43,7 +43,7 @@
             this.userData.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userData.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.userData.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.userData.Location = new System.Drawing.Point(9, 209);
+            this.userData.Location = new System.Drawing.Point(15, 232);
             this.userData.Name = "userData";
             this.userData.Size = new System.Drawing.Size(170, 17);
             this.userData.TabIndex = 5;
@@ -55,7 +55,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label1.Location = new System.Drawing.Point(6, 183);
+            this.label1.Location = new System.Drawing.Point(12, 206);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 7;
@@ -72,7 +72,7 @@
             this.cbShouldRestart.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbShouldRestart.FlatAppearance.CheckedBackColor = System.Drawing.Color.Transparent;
             this.cbShouldRestart.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.cbShouldRestart.Location = new System.Drawing.Point(9, 232);
+            this.cbShouldRestart.Location = new System.Drawing.Point(15, 255);
             this.cbShouldRestart.Name = "cbShouldRestart";
             this.cbShouldRestart.Size = new System.Drawing.Size(162, 17);
             this.cbShouldRestart.TabIndex = 34;
@@ -87,7 +87,7 @@
             this.discordLocator.BackColor = System.Drawing.Color.Transparent;
             this.discordLocator.Location = new System.Drawing.Point(0, 3);
             this.discordLocator.Name = "discordLocator";
-            this.discordLocator.Size = new System.Drawing.Size(662, 177);
+            this.discordLocator.Size = new System.Drawing.Size(662, 187);
             this.discordLocator.TabIndex = 6;
             // 
             // UninstallConfigPanel
@@ -100,7 +100,7 @@
             this.Controls.Add(this.userData);
             this.Controls.Add(this.discordLocator);
             this.Name = "UninstallConfigPanel";
-            this.Size = new System.Drawing.Size(662, 284);
+            this.Size = new System.Drawing.Size(662, 294);
             this.ResumeLayout(false);
             this.PerformLayout();
 

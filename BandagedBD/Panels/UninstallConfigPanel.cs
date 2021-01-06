@@ -16,12 +16,12 @@ namespace BandagedBD.Panels {
 
         public string[] pathsToDelete {
             get {
-                List<string> paths = new List<string>(Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, "resources\\app"));
+                List<string> paths = new List<string>(Utilities.GetLocalPaths(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development, "resources\\app"));
                 if (userData.Checked) paths.Add($"{Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData)}\\BetterDiscord");
                 return paths.ToArray();
             }
         }
-        public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb);
+        public string[] executables => Utilities.GetExecutables(discordLocator.stable, discordLocator.canary, discordLocator.ptb, discordLocator.development);
         public bool shouldRestart => cbShouldRestart.Checked;
 
         public UninstallConfigPanel() {
@@ -30,6 +30,7 @@ namespace BandagedBD.Panels {
             discordLocator.setCheckboxLabel(Discord.Stable, "Remove from Stable");
             discordLocator.setCheckboxLabel(Discord.Canary, "Remove from Canary");
             discordLocator.setCheckboxLabel(Discord.PTB, "Remove from PTB");
+            discordLocator.setCheckboxLabel(Discord.Development, "Remove from Development");
             discordLocator.OnCheckedChange += OnCheckedChange;
         }
 
@@ -40,7 +41,7 @@ namespace BandagedBD.Panels {
         }
 
         private void OnCheckedChange(object sender, EventArgs e) {
-            if (discordLocator.stable || discordLocator.canary || discordLocator.ptb) Window.btnNext.ShowEnable("Uninstall");
+            if (discordLocator.stable || discordLocator.canary || discordLocator.ptb || discordLocator.development) Window.btnNext.ShowEnable("Uninstall");
             else Window.btnNext.ShowDisable("Uninstall");
         }
 

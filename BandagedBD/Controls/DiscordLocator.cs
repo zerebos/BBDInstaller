@@ -7,6 +7,8 @@ namespace BandagedBD.Controls {
         public bool stable => discordStable.Checked;
         public bool canary => discordCanary.Checked;
         public bool ptb => discordPTB.Checked;
+        public bool development => discordDevelopment.Checked;
+
         public EventHandler OnCheckedChange;
 
         public DiscordLocator() {
@@ -14,9 +16,11 @@ namespace BandagedBD.Controls {
             if (Utilities.CurrentStablePath != null) tbStable.Text = Utilities.CurrentStablePath;
             if (Utilities.CurrentCanaryPath != null) tbCanary.Text = Utilities.CurrentCanaryPath;
             if (Utilities.CurrentPtbPath != null) tbPTB.Text = Utilities.CurrentPtbPath;
+            if (Utilities.CurrentDevelopmentPath != null) tbDevelopment.Text = Utilities.CurrentDevelopmentPath;
             Utilities.EnsureDiscord(tbStable, discordStable, Discord.Stable);
             Utilities.EnsureDiscord(tbCanary, discordCanary, Discord.Canary);
             Utilities.EnsureDiscord(tbPTB, discordPTB, Discord.PTB);
+            Utilities.EnsureDiscord(tbDevelopment, discordDevelopment, Discord.Development);
         }
 
         public void setLabel(string label) {
@@ -27,6 +31,7 @@ namespace BandagedBD.Controls {
             if (which == Discord.Stable) discordStable.Text = label;
             if (which == Discord.Canary) discordCanary.Text = label;
             if (which == Discord.PTB) discordPTB.Text = label;
+            if (which == Discord.Development) discordDevelopment.Text = label;
         }
 
         private void browseStable_Click(object sender, EventArgs e) {
@@ -50,6 +55,14 @@ namespace BandagedBD.Controls {
             Utilities.EnsureDiscord(tbPTB, discordPTB, Discord.PTB);
         }
 
+        private void browseDevelopment_Click(object sender, EventArgs e)
+        {
+            var fbd = new FolderBrowserDialog { SelectedPath = tbDevelopment.Text };
+            fbd.ShowDialog();
+            tbDevelopment.Text = fbd.SelectedPath;
+            Utilities.EnsureDiscord(tbDevelopment, discordDevelopment, Discord.Development);
+        }
+
         private void discordStable_CheckedChanged(object sender, EventArgs e) {
             if (discordStable.Checked) Utilities.EnsureDiscord(tbStable, discordStable, Discord.Stable);
             OnCheckedChange?.Invoke(sender, e);
@@ -62,6 +75,12 @@ namespace BandagedBD.Controls {
 
         private void discordPTB_CheckedChanged(object sender, EventArgs e) {
             if (discordPTB.Checked) Utilities.EnsureDiscord(tbPTB, discordPTB, Discord.PTB);
+            OnCheckedChange?.Invoke(sender, e);
+        }
+
+        private void discordDevelopment_CheckedChanged(object sender, EventArgs e)
+        {
+            if (discordDevelopment.Checked) Utilities.EnsureDiscord(tbDevelopment, discordDevelopment, Discord.Development);
             OnCheckedChange?.Invoke(sender, e);
         }
     }

@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace BandagedBD {
 
-    public enum Discord { Stable, Canary, PTB };
+    public enum Discord { Stable, Canary, PTB, Development };
 
     public class Utilities {
         public static readonly Regex _matcher = new Regex(@"[0-9]+\.[0-9]+\.[0-9]+");
@@ -29,9 +29,14 @@ namespace BandagedBD {
         public static string PtbPathPD => PDPath("DiscordPTB");
         public static string PtbPathEXE => EXEPath(GetProcess("DiscordPTB"));
 
+        public static string DevelopmentPath => LADPath("DiscordDevelopment");
+        public static string DevelopmentPathPD => PDPath("DiscordDevelopment");
+        public static string DevelopmentPathEXE => EXEPath(GetProcess("DiscordDevelopment"));
+
         public static string CurrentStablePath = Directory.Exists(StablePathEXE) ? StablePathEXE : Directory.Exists(StablePathPD) ? StablePathPD : Directory.Exists(StablePath) ? StablePath : null;
         public static string CurrentCanaryPath = Directory.Exists(CanaryPathEXE) ? CanaryPathEXE : Directory.Exists(CanaryPathPD) ? CanaryPathPD : Directory.Exists(CanaryPath) ? CanaryPath : null;
         public static string CurrentPtbPath = Directory.Exists(PtbPathEXE) ? PtbPathEXE : Directory.Exists(PtbPathPD) ? PtbPathPD : Directory.Exists(PtbPath) ? PtbPath : null;
+        public static string CurrentDevelopmentPath = Directory.Exists(DevelopmentPathEXE) ? DevelopmentPathEXE : Directory.Exists(DevelopmentPathPD) ? DevelopmentPathPD : Directory.Exists(DevelopmentPath) ? DevelopmentPath : null;
 
         public static void OpenProcess(string url) {
             Process.Start(url);
@@ -96,30 +101,34 @@ namespace BandagedBD {
             return currentExecutable;
         }
 
-        public static string[] GetExecutables(bool stable, bool canary, bool ptb) {
+        public static string[] GetExecutables(bool stable, bool canary, bool ptb, bool development) {
             List<string> exes = new List<string>();
             if (stable) exes.Add("Discord");
             if (canary) exes.Add("DiscordCanary");
             if (ptb) exes.Add("DiscordPTB");
+            if (development) exes.Add("DiscordDevelopment");
             return exes.ToArray();
         }
 
-        public static string[] GetRoamingPaths(bool stable, bool canary, bool ptb, string subFolder = "") {
+        public static string[] GetRoamingPaths(bool stable, bool canary, bool ptb, bool development, string subFolder = "") {
             List<string> roaming = new List<string>();
             var stableFolder = GetRoaming("discord");
             var canaryFolder = GetRoaming("discordcanary");
             var ptbFolder = GetRoaming("discordptb");
+            var developmentFolder = GetRoaming("discorddevelopment");
             if (stable && stableFolder != string.Empty) roaming.Add($"{stableFolder}\\{subFolder}");
             if (canary && canaryFolder != string.Empty) roaming.Add($"{canaryFolder}\\{subFolder}");
             if (ptb && ptbFolder != string.Empty) roaming.Add($"{ptbFolder}\\{subFolder}");
+            if (development && developmentFolder != string.Empty) roaming.Add($"{developmentFolder}\\{subFolder}");
             return roaming.ToArray();
         }
 
-        public static string[] GetLocalPaths(bool stable, bool canary, bool ptb, string subFolder = "") {
+        public static string[] GetLocalPaths(bool stable, bool canary, bool ptb, bool development, string subFolder = "") {
             List<string> paths = new List<string>();
             if (stable) paths.Add($"{CurrentStablePath}\\{subFolder}");
             if (canary) paths.Add($"{CurrentCanaryPath}\\{subFolder}");
             if (ptb) paths.Add($"{CurrentPtbPath}\\{subFolder}");
+            if (development) paths.Add($"{CurrentDevelopmentPath}\\{subFolder}");
             return paths.ToArray();
         }
 
@@ -127,6 +136,7 @@ namespace BandagedBD {
             if (which == Discord.Stable) return "Discord";
             if (which == Discord.Canary) return "DiscordCanary";
             if (which == Discord.PTB) return "DiscordPTB";
+            if (which == Discord.Development) return "DiscordDevelopment";
             return "";
         }
 
@@ -150,6 +160,7 @@ namespace BandagedBD {
                 if (which == Discord.Stable) CurrentStablePath = baseFolder;
                 if (which == Discord.Canary) CurrentCanaryPath = baseFolder;
                 if (which == Discord.PTB) CurrentPtbPath = baseFolder;
+                if (which == Discord.Development) CurrentDevelopmentPath = baseFolder;
             }
         }
 

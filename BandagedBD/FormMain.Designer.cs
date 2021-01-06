@@ -51,7 +51,7 @@ namespace BandagedBD {
             this.panelDock.BackColor = System.Drawing.Color.Transparent;
             this.panelDock.Location = new System.Drawing.Point(12, 96);
             this.panelDock.Name = "panelDock";
-            this.panelDock.Size = new System.Drawing.Size(752, 339);
+            this.panelDock.Size = new System.Drawing.Size(752, 377);
             this.panelDock.TabIndex = 0;
             // 
             // lblTitle
@@ -86,7 +86,7 @@ namespace BandagedBD {
             this.linkLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = global::BandagedBD.Properties.Settings.Default.Accent;
-            this.linkLabel1.Location = new System.Drawing.Point(172, 471);
+            this.linkLabel1.Location = new System.Drawing.Point(174, 509);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(95, 13);
             this.linkLabel1.TabIndex = 34;
@@ -101,7 +101,7 @@ namespace BandagedBD {
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.label1.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.label1.Location = new System.Drawing.Point(13, 471);
+            this.label1.Location = new System.Drawing.Point(15, 509);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(120, 13);
             this.label1.TabIndex = 33;
@@ -116,7 +116,7 @@ namespace BandagedBD {
             this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.btnCancel.Location = new System.Drawing.Point(689, 466);
+            this.btnCancel.Location = new System.Drawing.Point(689, 504);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 23);
             this.btnCancel.TabIndex = 8;
@@ -132,7 +132,7 @@ namespace BandagedBD {
             this.btnNext.FlatAppearance.BorderSize = 0;
             this.btnNext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNext.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.btnNext.Location = new System.Drawing.Point(608, 466);
+            this.btnNext.Location = new System.Drawing.Point(608, 504);
             this.btnNext.Name = "btnNext";
             this.btnNext.Size = new System.Drawing.Size(75, 23);
             this.btnNext.TabIndex = 7;
@@ -148,7 +148,7 @@ namespace BandagedBD {
             this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.ForeColor = global::BandagedBD.Properties.Settings.Default.TextColor;
-            this.btnBack.Location = new System.Drawing.Point(527, 466);
+            this.btnBack.Location = new System.Drawing.Point(527, 504);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
             this.btnBack.TabIndex = 6;
@@ -160,7 +160,7 @@ namespace BandagedBD {
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = global::BandagedBD.Properties.Settings.Default.PrimaryBackground;
-            this.ClientSize = new System.Drawing.Size(776, 501);
+            this.ClientSize = new System.Drawing.Size(776, 539);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label1);
