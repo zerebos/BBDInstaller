@@ -1,3 +1,5 @@
+# This repo has been archived and is no longer active. If you are looking to install BetterDiscord. Please use the new installers found here: https://github.com/BetterDiscord/Installer
+
 # BandagedBD Installer
 
 This is the source for the Windows installer of [BandagedBD](https://github.com/rauenzi/BetterDiscordApp), a mod for Discord. I decided to put this in a separate repo  mainly because it didn't feel quite right to have it in with the actual application itself as the application is JavaScript injection onto an Electron.js platform, and this is an actual executable that only sets ups files for it.
